@@ -5,26 +5,21 @@ jobs:
       - image:  fpco/stack-build:lts-12.5
     steps:
       - checkout
-      - restore-cache:
-          keys:
-            - stack-{{ checksum "stack.yaml" }}
-      - restore-cache:
-          keys:
-            - stack-{{checksum "stack.yaml"}}-{{checksum "hhc.cabal"}}
+      - restore_cache:
+          key: stack-{{ checksum "stack.yaml" }}
+      - restore_cache:
+          key: stack-{{checksum "stack.yaml"}}-{{checksum "hhc.cabal"}}
       - run: 
           name: build
           command: stack build
-      - save-cache:
-          keys: 
-            - stack-{{ checksum “stack.yaml” }}
+      - save_cache:
+          key: stack-{{ checksum “stack.yaml” }}
           paths:
             - “~/.stack”
-      - save-cache:
-          keys: 
-            - stack-{{checksum “stack.yaml”}}-{{checksum “project.cabal”}}
+      - save_cache:
+          key: stack-{{checksum “stack.yaml”}}-{{checksum “project.cabal”}}
           paths:
             - “.stack-work”
       - run: 
           name: test
           command: stack test
-          
