@@ -13,11 +13,11 @@ jobs:
           name: build
           command: stack build
       - save_cache:
-          key: stack-{{ checksum “stack.yaml” }}
+          key: stack-{{checksum “stack.yaml"}}
           paths:
-            - “~/.stack”
+            - "~/.stack"
       - save_cache:
-          key: stack-{{checksum “stack.yaml”}}-{{checksum “project.cabal”}}
+          key: stack-{{checksum "stack.yaml"}}-{{checksum "hhc.cabal"}}
           paths:
             - “.stack-work”
       - run: 
