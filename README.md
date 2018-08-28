@@ -1,4 +1,4 @@
-# hhc - simple haskell hash cracker
+# hhc - simple haskell hash cracker [![CircleCI](https://circleci.com/gh/jjantura/hhc.svg?style=svg)](https://circleci.com/gh/jjantura/hhc)
 
 Main assumptions
 
