@@ -1,0 +1,40 @@
+name:                hhc
+version:             0.2.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/hhc#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Benchmark, Bruteforce, Charset, Dictionary, File, CommandLine, Common, Rules
+  build-depends:       base >= 4.7 && < 5, bytestring, cryptonite, MissingH, text, directory, clock, containers, deepseq, criterion
+  default-language:    Haskell2010
+
+executable hhc-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -O -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base, hhc, directory, clock, formatting, cryptonite, optparse-applicative, tuple, containers
+  default-language:    Haskell2010
+
+test-suite hhc-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  other-modules:       BruteforceSpec, CharsetSpec, DictionarySpec, RulesSpec
+  main-is:             Spec.hs
+  build-depends:       base, hhc, hspec, QuickCheck, cryptonite
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/hhc

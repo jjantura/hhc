@@ -1,0 +1,29 @@
+commands: benchmark, bruteforce, dict, rules
+options for commands:
+    
+    benchmark: no options
+
+    bruteforce: 
+        -a --algorithm [obligatory]
+        -ll --min-length [obligatory]
+        -ul --max-length [obligatory]
+        -c --charset [obligatory]
+        -i --input file with hashes [obligatory]
+        -t --threads thread count [optional]
+        -o --output [optional, stdout when not provided otherwise file]
+    dict:
+        -a --algorithm [obligatory]
+        -d --dictionary [obligatory]
+        -i --input file with hashes [obligatory]
+        -t --threads thread count [optional]
+        -o --output [optional, stdout when not provided otherwise file]        
+    rules:              
+        -a --algorithm [obligatory]
+        -d --dictionary [dictionary]
+        -r --rules [obligatory]
+        -i --input file with hashes [obligatory]
+        -t --threads thread count [optional]
+        -o --output [optional, stdout when not provided otherwise file]
+
+
+
