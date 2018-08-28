@@ -10,7 +10,7 @@ jobs:
             - stack-{{ checksum "stack.yaml" }}
       - restore-cache:
           keys:
-            - stack-{{checksum "stack.yaml"}}-{{checksum "project.cabal"}}
+            - stack-{{checksum "stack.yaml"}}-{{checksum "hhc.cabal"}}
       - run: 
           name: get stack
           command: wget https://github.com/commercialhaskell/stack/releases/download/v1.7.1/stack-1.7.1-linux-x86_64.tar.gz -O /tmp/stack.tar.gz
