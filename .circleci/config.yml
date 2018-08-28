@@ -12,9 +12,6 @@ jobs:
           keys:
             - stack-{{checksum "stack.yaml"}}-{{checksum "hhc.cabal"}}
       - run: 
-          name: setup
-          command: stack setup
-      - run: 
           name: build
           command: stack build
       - run: 
