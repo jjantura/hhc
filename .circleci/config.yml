@@ -14,7 +14,17 @@ jobs:
       - run: 
           name: build
           command: stack build
+      - save-cache:
+          keys: 
+            - stack-{{ checksum “stack.yaml” }}
+          paths:
+            - “~/.stack”
+      - save-cache:
+          keys: 
+            - stack-{{checksum “stack.yaml”}}-{{checksum “project.cabal”}}
+          paths:
+            - “.stack-work”
       - run: 
           name: test
           command: stack test
-
+          
