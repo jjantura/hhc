@@ -1,2 +1,3 @@
 #!/bin/bash
-stack exec hhc-exe qwertyuiopasdfghjklzxcvbnm 1 3 hash.sha1 
+#!/bin/bash
+stack exec -- hhc-exe -m bruteforce -a MD5 -c abcz -ll 1 -ul 3 -i hashes.md5
