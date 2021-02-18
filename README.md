@@ -2,7 +2,7 @@
 
 Main assumptions
 
-The project is meant NOT to be competitive to any other password crackers. It's just a side-product of haskell self-study and can be rather considered as (comparative) benchmark.
+The project is meant NOT to be competitive to any other password crackers. It's just a side-product of Haskell self-study and can be rather considered as (comparative) benchmark.
 
 Functional TODO:
 - other algorithms: MD5, SHA*, RipeMD, ... [done]
